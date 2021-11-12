@@ -63,12 +63,16 @@ mongoose
   /* .then(()=>{
     return Recipe.deleteOne({_id:ObjectId("618d48ce7650f047a02d953e")})
   }) */
+ /*  .then(()=>{
+    return Recipe.deleteOne({_id:ObjectId({title:"Rigatoni alla Genovese"})
+  }) */
   .then(()=>{
-    return Recipe.deleteOne({_id:ObjectId("618d49b9333f524c4c45e444")})
+    console.log("it is done")
+    mongoose.disconnect();
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
+    });
     //disconnect
-    console.log("it is done")
-    mongoose.disconnect();
-  });
+  
+  
